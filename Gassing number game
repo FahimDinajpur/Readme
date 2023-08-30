@@ -1,1 +1,48 @@
-
+import random
+flag=True
+nflag=True
+while flag:
+  low=input("Type the number for first LoWESR RANGR:-")
+  if low.isdigit():
+    low=int(low)
+    flag=False
+  else:
+    print("INPUT IS NOT RIGHT ..TRY AGAIN PLESE WITH NUMBER..")
+while nflag:
+  num=input("Type the number for first HIGEST RANGR:-")
+  if num.isdigit():
+    print("GAME STARTED!! ")
+    num=int(num)
+    nflag=False
+  else:
+    print("INPUT IS NOT RIGHT ..TRY AGAIN PLESE WITH NUMBERS..")
+secret=random.randint(low,num)
+guess=None
+count=1 
+gCount=0
+fLimit=False
+tflag=True
+while tflag:
+  z=(input("PLease input number of try :"))
+  if z.isdigit():
+    z=int(z)
+    tflag=False
+  else:
+    print("Number is Not IN RANGE")
+while guess!=secret:
+  gCount+=1
+  guess=input("Please type again number between "+str(low)+" and "+str(num)+" : ")
+  if gCount==z:
+    print("You lose .OUT OF TRY")
+    break
+  if guess.isdigit():
+    guess=int(guess)
+    if guess >num or guess<low:
+      print("Number is Not IN RANGE")
+    elif guess==secret:
+      print("CONGRATULATION!!YOU ARE RIGHT")
+  else:
+    if guess.isalpha():
+      print("Number not Alphapet!!!!")
+    else:
+      print("Please Give Number Not anything else")
